@@ -33,10 +33,10 @@ export const chat = async (input: string): Promise<any> => {
 export const getDocumentsFromRAG = async (input: string): Promise<string> =>  {
   let responseContent: string = ''
   const dataSourceId: string = process.env.VERTEXAI_DATASOURCE_ID ?? ''
-  const apiEndpointFromEnv: string = 'discoveryengine.googleapis.com'
+  const apiEndpoint: string = 'discoveryengine.googleapis.com'
   const servingConfigId: string = 'default_config'
 
-  const client = new v1beta.SearchServiceClient({ apiEndpoint: apiEndpointFromEnv })
+  const client = new v1beta.SearchServiceClient({ apiEndpoint: apiEndpoint })
   const request = {
     servingConfig: dataSourceId + '/servingConfigs/' + servingConfigId,
     query: input,
