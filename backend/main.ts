@@ -4,7 +4,7 @@ import { chat } from './src/chat'
 console.log('active')
 
 const app: Express = express()
-const port = 3000
+const port = 3001
 app.use(express.json())
 
 app.get('/', (req: Request, res: Response) => {
